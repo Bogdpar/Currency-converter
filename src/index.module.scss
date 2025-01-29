@@ -1,0 +1,13 @@
+html {
+  overflow-x: hidden;
+  scrollbar-color: gray #1d2024;
+  scrollbar-width: thin;
+  background-color: #1d2024;
+  color: white;
+}
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}

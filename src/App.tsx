@@ -1,12 +1,12 @@
-import React from 'react';
 import Header from './Header/Header';
 import Converter from './Converter/Converter';
+import styles from './index.module.scss'
 
 function App() {
   return (
-    <div>
-      <Header/>
-      <Converter/>
+    <div className={styles.App}>
+      <Header />
+      <Converter />
     </div>
   );
 }

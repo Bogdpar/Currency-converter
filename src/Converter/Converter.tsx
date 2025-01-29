@@ -1,7 +1,7 @@
 import { FC, useEffect, useState } from "react"
 import axios from "axios";
 import { ICurrency } from "../types/types";
-
+import styles from './Converter.module.scss'
 const Converter: FC = () => {
   const [amountOne, setAmountOne] = useState<number>(1);
   const [amountTwo, setAmountTwo] = useState<number>(1);
@@ -41,11 +41,12 @@ const Converter: FC = () => {
   }, [amountTwo, currencyOne, currencyTwo, currencyData]);
 
   return (
-    <div className="converter">
+    <div className={styles.converter}>
       <h1>Конвертер валют</h1>
 
       <div>
         <input
+          className={styles.inp}
           type="number"
           value={amountOne}
           onChange={(e) => {
@@ -53,7 +54,7 @@ const Converter: FC = () => {
             setAmountOne(parseFloat(e.target.value) || 0);
           }}
         />
-        <select value={currencyOne} onChange={(e) => setCurrencyOne(e.target.value)}>
+        <select className={styles.sel} value={currencyOne} onChange={(e) => setCurrencyOne(e.target.value)}>
           {currencyData.map((currency) => (
             <option key={currency.cc} value={currency.cc}>
               {currency.cc} ({currency.txt})
@@ -66,6 +67,7 @@ const Converter: FC = () => {
 
       <div>
         <input
+          className={styles.inp}
           type="number"
           value={amountTwo}
           onChange={(e) => {
@@ -73,7 +75,7 @@ const Converter: FC = () => {
             setAmountTwo(parseFloat(e.target.value) || 0);
           }}
         />
-        <select value={currencyTwo} onChange={(e) => setCurrencyTwo(e.target.value)}>
+        <select className={styles.sel} value={currencyTwo} onChange={(e) => setCurrencyTwo(e.target.value)}>
           {currencyData.map((currency) => (
             <option key={currency.cc} value={currency.cc}>
               {currency.cc} ({currency.txt})
@@ -83,7 +85,7 @@ const Converter: FC = () => {
       </div>
 
       <h2>
-        {amountOne} {currencyOne} = {amountTwo.toFixed(2)} {currencyTwo}
+        {amountOne.toFixed(2)} {currencyOne} = {amountTwo.toFixed(2)} {currencyTwo}
       </h2>
     </div>
   );
