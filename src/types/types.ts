@@ -5,3 +5,4 @@ export interface ICurrency {
   rate: number;
   txt: string;
 }
+

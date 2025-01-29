@@ -1,9 +1,12 @@
 import React from 'react';
+import Header from './Header/Header';
+import Converter from './Converter/Converter';
 
 function App() {
   return (
-    <div className="App">
-      
+    <div>
+      <Header/>
+      <Converter/>
     </div>
   );
 }
